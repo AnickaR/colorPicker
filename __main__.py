@@ -97,6 +97,7 @@ class ColorPicker(tk.Tk):
             #     self.canvasColor25lids()
             event.widget.config(bg=self.color)
 
+            # uložení příslušné barvy při vložení do colorpalety
             if (str(event.widget).__contains__(f".!frame4.!canvas")):
                 colors = self.getSavedColors()
                 colors[int(info['row'])][int(info['column'])] = self.color
@@ -105,6 +106,7 @@ class ColorPicker(tk.Tk):
                 file.write(colors)
                 file.close()
 
+    # funkce pro načtení barev ze souboru colors.txt
     def getSavedColors(self):
         file = open(self.fileName, 'r')
         colors = file.readline().split('|')
