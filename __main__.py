@@ -8,7 +8,7 @@ from tkinter import Scale, Frame, Label, LEFT, S, HORIZONTAL, Entry
 # from tkinter import ttk
 
 
-class Application(tk.Tk):
+class ColorPicker(tk.Tk):
     name = "ColorMishMash"
 
     def __init__(self):
@@ -130,5 +130,10 @@ class Application(tk.Tk):
         print(event.keycode, event.keysym, event.x, event.y)
 
 
-app = Application()
-app.mainloop()
+def main():
+    app = ColorPicker()
+    app.mainloop()
+
+
+if (__name__ == '__main__'):
+    main()
